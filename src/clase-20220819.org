@@ -1,0 +1,92 @@
+#+LANGUAGE: es
+#+TITLE: Clase Viernes 19 de Agosto del 2022
+
+* Estructuras Dinámicas
+
+La principal característica de las estructuras dinámicas es la facultad que tienen para variar su tamaño y hay muchos problemas que requieren de este tipo de estructuras.
+
+Esta propiedad las distingue claramente de las estructuras estáticas fundamentales.
+
+Por lo tanto, no es psible asignar una cantidad fija de memoria para una estructura dinámica, y cono consecuencia un compilador no puede asociar direcciones explícitas con las componentes de tales estructuas. La técnica que se utiliza para resolver este problema consiste en realizar una asignación dinámica para las componentes oindividuales, al tiempo que son creadas durante la ejecución del programa.
+
+Cuando se trabaja con estructuras dinámica el compilador asigna una cantidad fija de memoria para mantener la dirección del componente asignado dinpamicamente.
+
+* Listas Lineales
+Una lista lineal es una colección, originalmente vacía, de elementos u objetos de cualquier tipo de dato no necesariamente consecutivos en memoriam que durante la ejecución del programa puede crecer o decrecer elemento a elemento según las necesidades previstas en el mismo.
+
+Cada elemento debe almacenar información de dónde esta el siguiente elemento o el anterior, o ambos.
+
+La lista tiene como estructura el nodo, la cual contiene un campo donde se almacena un valor y otro campo donde se tiene un puntero de posición.
+
+Las listas puedes clasificarse en listas encadenadas simples, circulares, doblemente ligada.
+
+** Listas lineales simplemente encadenadas.
+Una lista lineal simplemente encadena es una colección de elementos que contienen un dato y un puntero al sigueinte elemento.
+
+[ Nodo ] -puntero-> [nodo] -puntero-> [nodo]
+
+     Cabeza (inicio)              Nodo 2                     Ptr actual                 Cola (final)
+[ dato | *siguiente ] --> [ dato | *siguiente ] -> [ dato | *siguiente ] -> [ dato | *siguiente -> nulo ]
+
+Toda lista ligada tiene el nodo cabecera, la cual apunta al inicio de la lista ligada. Si se pierde el nodo cabecera se pierde la lista ligada.
+
+- Asignación fija, o estática, de memoria mediante arreglos.
+- Asignación dinámica de memoria mediante apuntadores.
+
+La lista se recorre desde l primero al último nodo.
+
+Las estructuas estás compuestas de otras pequeñas estructuas a las que llamaremos nodos.
+
+#+BEGIN_SRC c
+  struct
+  {
+    int dato;
+    struct nodo *otronodo; // puntero de autoreferencia, apunta a un dato del mismo tipo
+  }
+#+END_SRC
+
+Lista abierta
+
+Cada nodo apunta al siguiente, y el último no apunta a nada, es decir a null.
+
+*** Operaciones
+- Añadir o insertar elementos.
+- Borrar elementos.
+- Moverse a través de una lista anterior, siguiente, primero.
+- Buscar o localizar elementos.
+
+**** INSERTAR
+
+- Insertar al frente
+- Insertar al final
+- Insertar en medio
+
+Insertar al frente:
+
+Asumiendo que la cabeza apunta a null.
+
+1. Declaramos el puntero nuevo.
+2. Solicitamos espacio de memoria: malloc
+3. Asignamos el dato del nodo.
+4. Asignamos el apuntador siguiente a nulo.
+
+Asumiendo que la cabeza apunta a un elemento ya existente.
+
+1. Declaramos el puntero nuevo.
+2. Solicitamos espacio de memoria: malloc.
+3. Asignamos el dato del nodo.
+4. Asignamos el apuntador siguiente a la cabeza.
+5. Asignamos el apuntador cabeza al puntero nuevo.
+
+Nodo
+[Dato | *siguiente]
+
+[Dato | *siguiente] -> [Dato | *siguiente] -> [Dato | *siguiente] -> [Dato | *siguiente]
+
+**** Eliminar o borrar
+- Insertar al frente
+- Insertar al final
+- Insertar en medio
+
+**** Invesigar
+¿Qué realiza la instrucción typedef?

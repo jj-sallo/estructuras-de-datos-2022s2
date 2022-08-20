@@ -1,0 +1,84 @@
+#+LANGUAGE: es
+#+TITLE: Clase Miércoles 17 de Agosto del 2022
+
+* Estructuras de datos
+
+** Estructura de control
+
+*** Lineas o secuencias
+- Entrada de datos
+- Salida de datos
+- Asignaciones
+
+*** No lineales
+- Estructuas de selección
+  + if
+  + if/else
+  + if anidado
+  + switch/case
+- repetición
+  + for: Estructuras estáticas numéricas
+  + while: Utilizado cuando
+  + do/while: Validaciones y procesos que se hacen al menos una vez
+    
+** Estructura de datos
+Una forma de organizar datos—como un conjunto—elementales con el objetivo de facilitar la manipulación de estos datos como un todo o individual y conjunto de operaciones
+
+*** Estructuras de datos estáticas
+El espacio de memoria de los datos se definen en su diseño y su memoria no aumenta en el tiempo de ejecución.
+
+- Arreglos numéricos
+  + Una dimensión -> Vector
+  + Dos dimensiones -> Matriz
+  + Tres dimensiones -> Tabla
+  + N dimensiones -> Simplex
+- Cadenas de caractéres
+- Arreglos de cadenas de caractéres
+- Struct (registros)
+  - Arreglo de structs
+  - Funciones
+  - Punteros
+  - Archivos
+
+*** Estructuras Dinámicas
+El espacio de memoria se empieza a generar al momento de ejecutar el programa.
+
+- Lineales
+  + Listas encadenadas
+  + Pilas
+  + Colas
+- No lineales
+  + Arboles
+  + Grafos
+- Recursividad
+- Ordenación y búsqueda
+
+*** Tarea 1
+- Aignación dinámica de memoria
+  - malloc()
+  - calloc()
+  - new()
+- struct()
+- typedef struct() (investigar en dónde se usa cada una).
+
+*** ¿Qué es una estructura de datos?
+Forma de organizar un conjunto de datos elementales (un dato elemental es la mínima información que se tiene en el sistema) con el objetivo de facilitar la manipulación de estos datos como un todo o individualmente.
+
+Define la rognaziación de interrelacionamiento de estos, y un conjunto de operaciones que se pueden realizar sobre él.
+
+Las operaciones báscias:
+- Alta
+- Baja
+- Búsqueda
+- Ordenamiento
+- Apareo (JOIN)
+
+Tipos de estructuas de datos
+- Pilas
+- Colas y listas
+- Árboles
+- Grafos
+- Arreglos
+- Tablas Hash
+- Montículos
+- Registros

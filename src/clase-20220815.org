@@ -1,0 +1,60 @@
+#+LANGUAGE: es
+#+TITLE: Clase 2022-08-15
+
+* Apuntadores de estructuras
+
+Cuando se tiene un puntero a estructua, se puede acceder a los campos de la misma de dos formas diferentes. Desreferenciando el puntero o por medio del operador ".".
+
+#+BEGIN_SRC c
+  Struct S
+  {
+    int a;
+    float b;
+  };
+  Struct S var, *punt, arr[' '], *punt2;
+  punt = &var;
+  punt2 = &var[0];
+#+END_SRC
+
+Apuntadores
+#+BEGIN_SRC c
+  *ptr;
+  Inicialización:
+  ptr = &var;
+  ptr = A;
+  ptr = A[' '];
+#+END_SRC
+
+Referencia a una estructua
+- definir la variable tipo estructura
+  Struct S var; -> una variable
+  Struct S var[' '];
+- Acceder a los miembros de la estructura:
+  1. Operador punto (.)
+     #+BEGIN_SRC c
+       // lectura para variable a
+       scanf("%d", &var.a);
+     #+END_SRC
+  2. Operador flecha
+     #+BEGIN_SRC c
+       scanf("%d", punt->a);
+       // alternativamente:
+       scanf("%d", (*punt).a);
+     #+END_SRC
+
+** Lectura de un arreglo de struct
+
+Se recomineda usar dos ciclos do while para la lectura a un arreglo de struct en comparación a un for. El ciclo externo controla el desplazamiento en el arreglo y el ciclo interno se encarga de verificar la información que se introduce al elemento del arreglo. Un for no se detendrá en medio del proceso de recorrer el arreglo y tampoco se detendrá si la información introducida es inválida.
+
+#+BEGIN_SRC c
+fflush(stdin); //limpia el stream de caracteres. Esto es porque en el stream después de un gets() queda un caracter Enter, lo que termina la lectura del stream la siguiente ejecución de gets()
+gets(); //obtiene el input;
+#+END_SRC
+
+#+BEGIN_SRC c
+  char num[30];
+  gets(num); // =>Juan Perez
+  long longi = strlen(num); = 10;
+  for(int i = 0; i < longi; i++)
+    while(num[i] != '\0');
+#+END_SRC
