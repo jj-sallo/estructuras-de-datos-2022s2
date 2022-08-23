@@ -1,0 +1,57 @@
+
+# &Iacute;ndice
+
+1.  [Listas](#org755bc72)
+    1.  [Listas lineales simplemente encadenadas](#org2915c12)
+        1.  [Operaciones (parte 2)](#org205a838)
+
+
+
+<a id="org755bc72"></a>
+
+# Listas
+
+
+<a id="org2915c12"></a>
+
+## Listas lineales simplemente encadenadas
+
+
+<a id="org205a838"></a>
+
+### Operaciones (parte 2)
+
+1.  Insertar por el principio
+
+        struct nodo
+        {
+          char dato;
+          struct nodo* siguiente;
+        };
+        
+        typedef struct nodo NODO;
+        typedef NODO* NODOSIG;
+        
+        int main()
+            {
+              NODOSIG lista = NULL;
+              char ele;
+              // ...
+              printf("\nIntroduzca un caracter: ");
+              scanf("%d", &ele);
+              insertar_frente(&lista, ele);
+              // ...
+            }
+        
+        void insertar_frente(NODOSIG lista, char valor)
+          {
+            NODOSIG nuevo;
+            nuevo = malloc(sizeof(NODO));
+            if(nuevo != NULL)
+              { 
+        	// nuevo->dato = valor;
+        	// nuevo->siguiente = NULL;
+        	// nuevo->siguiente = lista;
+              }
+          }
+
