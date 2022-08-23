@@ -1,0 +1,42 @@
+#+LANGUAGE: es
+#+TITLE: Clase del lunes 22 de Agosto del 2022
+
+* Listas
+
+** Listas lineales simplemente encadenadas
+*** Operaciones (parte 2)
+**** Insertar por el principio
+#+BEGIN_SRC c
+  struct nodo
+  {
+    char dato;
+    struct nodo* siguiente;
+  };
+
+  typedef struct nodo NODO;
+  typedef NODO* NODOSIG;
+
+  int main()
+      {
+        NODOSIG lista = NULL;
+        char ele;
+        // ...
+        printf("\nIntroduzca un caracter: ");
+        scanf("%d", &ele);
+        insertar_frente(&lista, ele);
+        // ...
+      }
+
+  void insertar_frente(NODOSIG lista, char valor)
+    {
+      NODOSIG nuevo;
+      nuevo = malloc(sizeof(NODO));
+      if(nuevo != NULL)
+        { 
+          // nuevo->dato = valor;
+          // nuevo->siguiente = NULL;
+          // nuevo->siguiente = lista;
+        }
+    }
+
+#+END_SRC
