@@ -1,0 +1,28 @@
+#+LANGUAGE: es
+#+TITLE: Clase del viernes 26 de Agosto del 2022
+
+* Eliminar medio
+
+#+begin_src c
+  char borrar_medio(NODOSIG *lista, char valor)
+  {
+      NODOSIG previo, actual, temporal;
+      previo = *lista;
+      actual = (*lista)->siguiente;
+      while (actual != NULL && actual->dato != valor)
+      {
+          previo = actual;
+          actual = actual->siguiente;
+      }
+
+      if (actual != NULL)
+      {
+          temporal = actual;
+          previo->siguiente = actual-siguiente;
+          free(temporal);
+          return valor;
+      }
+      else
+          return '\0';
+  }
+#+end_src

@@ -1,0 +1,120 @@
+#+LANGUAGE: en
+#+TITLE: Clase del miércoles 7 de septiembre del 2022
+
+* Notación infija y postfija
+** Asignación
+
+A el operador "=" se le da prioridad 0.
+
+#+begin_example
+a + b = x
+ab+ = x
+ab+x=
+Caractér  Pila   Postfija
+          vacía
+a         vacía  a
++         +      a
+b         +      ab
+=         =      ab+
+x         =      ab+x
+vacío     vacía  ab+x=
+
+x = a + b
+x = ab+
+xab+=
+
+caractér  Pila   Postfija
+          vacía
+x         vacía  x
+=         =      x
+a         =      xa
++         +      xa
+          =      xa
+b         +      xab
+          =
+vacío     vacía  xab+=
+#+end_example
+
+** Evaluación de una expresión transformada a postfija
+
+Se almacena la expresión transformada a notación postfija en un vector, en la que los operandos están repsresentados porvariables de una sola letra. Antes de evaluar la expresión se requiere dar valores numéricos a losoperandos.
+
+1. Examinar vecto desde el elemento 1 hasta el n. Repetir los pasos 2 y 3 para cada elemento del vector.
+2. Si el elemento es un operando, meterlo en la pila.
+3. Si el elemento es un operador, lo designamos por ejemplo con +
+   1. Sacar los dos elementos superores de la pila, los denominamos con los identificadores x, y respecttivamente.
+   2. Evaluar x + y; el resultado es z = x + y
+   3. El resultado z, meterlo en la pila.
+   4. Repetir a partir del paso 1.
+4. El resultado de la evaluación de la expresión está en el elemento cima de la pila.
+5. Fin del algoritmo.
+
+#+begin_example
+Expresión infija: a + b * c
+Algoritmo:
+Expresión postfija: abc*+
+valores: a = 2, b = 3, c = 4
+Algoritmo evaluar:
+Caractér  Pila     Evaluación
+          vacía
+1. a      a
+2. b      b
+          a
+3. c      c
+          b
+          a
+4. *      c -> z   z = b * c
+          b    a   z = 3 * 4
+          a        z = 12
+5. +      z -> y   y = a + z
+          a        y = 2 + 12
+                   y = 14
+6. vacía  vacía    y = 14
+
+Expresión infija: (a - b)^c + d
+Algoritmo:
+Expresión postfija: ab-c^d+
+valores: a = 4, b = 2, c = 3, d = 5
+auxiliares: x, y, z
+Algoritmo evaluar:
+Caractér   Pila      Evaluación
+           vacía
+1. a       a
+2. b       b
+           a
+3. -       b -> z    z = a - b
+           a         z = 4 - 2
+                     z = 2
+4. c       z -> c
+                z
+5. ^       c -> y    y = z^c
+           z         y = 2^3
+                     y = 8
+6. d       y -> d
+                y
+7. +       d -> x    x = y + d
+           y         x = 8 + 5
+                     x = 13
+8. vacío   vacía     x = 13
+#+end_example
+
+Para comprobar si es operador u operando podemos usar la función de la librería estandar <ctype.h>, ispunct()
+
+Checar: Librerías de ANSI C (libro).
+
+#+begin_src c
+  char car[50];
+  gets(car);
+  longitud = strlen(car);
+  for(int i = 0; i < longitud; i++)
+  {
+  // ...
+  }
+
+  // alternativamente
+
+  while(car[i] != '\0')
+  {
+  // ...
+  }
+#+end_src

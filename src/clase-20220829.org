@@ -1,0 +1,25 @@
+#+LANGUAGE: es
+#+TITLE: Clase del lunes 29 de Agosto del 2022
+
+* Pilas
+Una pila (stack) representa una estructura lineal de datos que se puede agregar o qutar elementos únicamente por uno de los dos extremos. Se le conoce como LIFO (last-in, first-out).
+
+Es una colección ordenada de elementos a los que sólo se puede acceder por un único lugar o extremo ed la pila, que se le conoce generalmente como tope.
+
+Los elementos de la pila se añaden o quitan (borrar) de la misma sólo por su parte superior (cima).
+
+Cuando se dice que la pila esta ordenada, lo que se quiere decir es que hay un elemento al que se puede acceder primer (el que esta encima de la pila), otro elemento al que se puede acceder en segundo ligar, (justo el elemento que esta debajo de la cima), un tercero, etc.
+
+No se requere que las entredars se puedan compara utilizando el operador (<) y pueden ser de cualquier tipo.
+
+Las entradas de la pila deben ser eliminadas en orden inverso al que se situaron en la misma.
+
+Las pilas se pueden representar a partir de otras estructuras de datos, tales como arreglos y listas.
+
+Al utilizar arreglos, es importante de definir el tamaño máximo de la pila, así como una variable auxiliar que se denomina TOPE. Esta variable se utiliza para indicar el último elemento que se insertó a la pila.
+
+Al utilizar arreglos para implementar pilas se tiene la limitación de que se debe reservar el espacio en memoria con aticipación. Si se inserta más del número de elementos máximo ocurre algo llamado desbordamiento - overflow.
+
+Una solución es definir un arreglo de gran tamañp-
+
+Otra solución es usar espacios compartidos.

@@ -1,0 +1,96 @@
+#+LANGUAGE: en
+#+TITLE: Clase del martes 6 de septiembre del 2022
+
+* Expresión infija y postfija
+** Ejemplos
+#+begin_example
+a * (b + c) / d
+a * bc+ / d
+abc+*d/
+
+Caractér   Pila    Expresión posfija
+           vacía
+1. a       vacía   a
+2. *       *       a
+3. (       (       a
+           *
+4. b       (       ab
+           *
+5. +       +       ab
+           (
+           *
+6. c       +       abc
+           (
+           *
+7. )       *       abc+
+8. /       /       abc+*
+9. d       /       abc+*d
+10.vacío   vacía   abc+*d/
+
+a * (b + c - (d / e ^ f) - g) - h
+a * (b + c - (d / ef^) - g) - h
+a * (b + c - def^/ - g) - h
+a * bc+def^/-g- - h
+abc+def^/-g-*h-
+
+Caractér   Pila    Expresión posfija
+           vacía
+1. a       vacía   a
+2. *       *       a
+3. (       (       a
+           *
+4. b       (       ab
+           *
+5. +       +       ab
+           (
+           *
+6. c       +       abc
+           (
+           *
+7. -       -       abc+
+           (
+           *
+8. (       (       abc+
+           -
+           (
+           *
+9. d       (       abc+d
+           -
+           (
+           *
+10. /      /       abc+d
+           (
+           -
+           (
+           *
+11. e      /       abc+de
+           (
+           -
+           (
+           *
+12. ^      ^       abc+de
+           /
+           (
+           -
+           (
+           *
+13. f      ^       abc+def
+           /
+           (
+           -
+           (
+           *
+14. )      -       abc+def^/
+           (
+           *
+15. -      -       abc+def^/-
+           (
+           *
+16. g      -       abc+def^/-g
+           (
+           *
+17. )      *       abc+def^/-g-
+18. -      -       abc+def^/-g-*
+19. h      -       abc+def^/-g-*h
+20. vacío  vacía   abc+def^/-g-*h-
+#+end_example

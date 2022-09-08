@@ -1,0 +1,39 @@
+#+LANGUAGE: es
+#+TITLE: Clase del 24 de Agosto del 2022
+
+* Listas
+** Listas lineales simplemente ligadas
+*** Operaciones (parte 4)
+**** Insertar medio
+Insertar en el medio implica que exista una lista de dos elementos o más. Para poder insertar en el medio hay que tener una referencia de dónde queremos insertar el elemento. En este caso será el dato que contiene el nodo.
+
+Para buscar el dato adelante del cuál queremos insertar un nuevo elemento, hay que crear una función de búsqueda dentro de la lista. Para buscar optimamente en una lista usamos una técnica llamada búsqueda binaria.
+
+#+begin_src c
+  void insertar_medio(NODOSIG* lista, char valor)
+  {
+      NODOSIG nuevo, previo, actual;
+      nuevo = malloc(sizeof(NODO));
+      if (nuevo != NULL)
+      {
+          nuevo->dato = valor;
+          nuevo->siguiente = NULL;
+          previo = NULL;
+          actual = *lista;
+
+          while (actual != NULL && actual > actual->dato)
+          {
+              previo = actual;
+              actual = actual->siguiente;
+          }
+
+          if(actual != NULL)
+          {
+              previo->siguiente = nuevo;
+              nuevo->siguiente = actual;
+          }
+          else
+              printf("No se encontró el valor especificado.");
+      }
+  }
+#+end_src

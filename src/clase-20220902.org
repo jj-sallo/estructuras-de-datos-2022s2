@@ -1,0 +1,58 @@
+#+LANGUAGE: es
+#+TITLE: Clase del viernes 2 de septiembre de 2022
+
+* Notacion infija y postfija
+** Conversión de infija a postfija: ejemplos
+
+#+begin_example
+1. a * b / a + c
+   ab* / a + c
+   ab* a/ ,+c
+   ab* a/ c+
+
+2. a * n / (a + c)
+   a * n / ac+
+   an* / ac+
+   an*ac+/
+
+3. x + y - x * y
+   x + y - xy*
+   xy+ - xy*
+   xy+xy*-
+
+4. (a - b)^c + d
+   ab-^c + d
+   ab-c^ + d
+   ab-c^d+
+
+5. a + b * c
+   a + bc*
+   abc*+
+
+6. a * (b + c) / d
+   a * bc+ / d
+   abc+* / d
+   abc+*d/
+
+7. (2 + (3 * 4)) = x
+   (2 + 34*) = x
+   234*+ = x
+   234*+x=
+
+8. ((2 + 3) * 4) = x
+   (23+ * 4) = x
+   23+4* = x
+   23+4*x=
+#+end_example
+
+** Asignación en notación postfija
+
+#+begin_example
+a + b = x
+ab+ = x
+ab+c=
+
+x = a + b
+x = ab+
+xab+=
+#+end_example

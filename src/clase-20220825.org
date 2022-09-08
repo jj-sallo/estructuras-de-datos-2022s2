@@ -1,0 +1,50 @@
+#+LANGUAGE: es
+#+TITLE: Clase del 25 de Agosto del 2022
+
+* Lista
+** Listas lineales simplemente ligadas
+*** Operaciones (parte 5)
+**** Eliminar elementos en una lista ligada
+Eliminar el primer nodo de una lista abierta:
+Es el caso más simple. Partiremos de una lista con uno o más nodos, y usaremos un puntero auxiliar, nodo.
+
+1. Asignmaos a Lista la dirección del segundo nodo de la lista: Lista->siguiente.
+2. Liberamos la memoria asignada al primer nodo, el que queremos eliminar.
+
+ #+begin_src c
+   char borrar_frente(NODOSIG *lista)
+   {
+       NODOSIG temporal, previo;
+       previo = (*lista)->siguiente;
+       if (previo != NULL)
+       {
+           temporal = (*lista);
+           ,*lista = *lista->siguiente;
+           free(temporal);
+           return a;
+       }
+       return '\0';
+   }
+
+   int main()
+   {
+       // ...
+       if (borrar_frente(&lista) == 'a')
+       {
+           // Success
+       }
+       else
+       {
+           // Error
+           free(lista);
+           lista = NULL;
+           // ...
+       }
+   }
+ #+end_src
+
+**** Eliminar al final
+
+#+begin_src c
+  // TODO
+#+end_src

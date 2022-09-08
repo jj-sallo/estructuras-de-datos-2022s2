@@ -1,0 +1,44 @@
+#+LANGUAGE: es
+#+TITLE: Clase del martes 22 de Agosto dl 2022
+
+* Listas
+** Listas lineales simplemente encadenadas
+*** Operaciones (parte 3)
+**** Insertar por el principio
+
+Para insertar un elemento al final de la lista, se hace uso de un ciclo que nos posicione al final de la lista, tal que:
+
+1. Definimos una función que tome el apuntador a la cabezera y un valor
+2. Dentro, definimos los punteros a nodo: nuevo, previo y actual.
+3. Alocamos memoria en
+
+#+BEGIN_SRC c
+  void insertar_final(NODOSIG *lista, char valor)
+  {
+      NODOSIG nuevo, previo, actual;
+      nuevo = malloc(sizeof(NODO));
+      if (nuevo != NULL)
+      {
+          nuevo->dato = valor;
+          nuevo->siguiente = NULL;
+
+          previo = NULL;
+          actual = *lista;
+
+          while(actual != NULL)
+          {
+              previo = actual;
+          }
+          if(previo == NULL)
+              lista = nuevo;
+          else
+              actual->siguiente = nuevo;
+      }
+  }
+#+END_SRC
+
+**** Insertar un elemento a continuación de un nodo cualquiera de una lista
+
+Insertar en el medio implica que exista una lista de dos elementos o más. Para poder insertar en el medio hay que tener una referencia de dónde queremos insertar el elemento. En este caso será el dato que contiene el nodo.
+
+Para buscar el dato adelante del cuál queremos insertar un nuevo elemento, hay que crear una función de búsqueda dentro de la lista. Para buscar optimamente en una lista usamos una técnica llamada búsqueda binaria.

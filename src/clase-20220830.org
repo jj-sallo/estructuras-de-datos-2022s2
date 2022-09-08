@@ -1,0 +1,90 @@
+
+
+
+* Pila
+Operaciones de una pila:
+- Tipo de dato: Dato que se almacena en la pila
+- Insertar (push): Insertar un dato en la pila
+- Quitar (pop): Sacar (quitar) un dato de la pila
+- Pila vacía: COmprobar si la pila no tiene elementos
+- Pila llena: COmprobar si la pila esta llena de elementos
+- Limpiar pila: Quitar todos sus elementos y dejarla vacía
+- Tamaño de la pila: Número de elementos máximo que puede contener la pila.
+
+Tipos de funciones
+- Computacional: con return
+- Procedual: sin return
+
+Pila de funciones: cuando se hace uso de una función, se hace lo que se llama una llamada a la función. Al llamar a la función, se obtiene la dirección de memoria de esta y esta se manda a la pila de funciones.
+
+Aplicaciones
+- Llamadas a subprogramas
+- Recursividad
+- Tratamiento de expresiones aritméticas
+- Ordenaciones
+
+** Llamada a subprogramas
+Cuando se tiene un programa que llama a un subprograma, también conocido como módulo o función, internamente se usan pilas para guardar el estado de las variables del programa, asó como instrucciones pendientes de ejecución.
+
+** Operaciones
+La operación inerstar (push) sitúa un elemento dato en la cima de la pila y quitar (pop) elimina o quita el elemento de la pila.
+
+#+begin_src c
+  #include <stdio.h>
+
+  #define N 5
+
+  void insertar(int pila[N], int *frente, int numero);
+  int sacar(int pila[N], int* frente, int* final);
+  void imprimir();
+  int main()
+  {
+      int frente = -1, final = 0;
+      int pila[N] = {0}, num, op;
+      //...
+      printf("\nElemento a insertar: ");
+      scanf("%d", &num);
+      insertar(pila, &frente, num);
+      num = sacar(pila, &frente, &final);
+      if (num == -9999)
+      {
+          printf("\n\tPila vacía\n");
+          frente = -1;
+          final = 0;
+      }
+      else
+          printf("\nElemento Sacado = %d", num);
+
+      return 0;
+  }
+
+  void insertar(int pila[N], int *frente, int numero)
+  {
+      if (*frente >= N-1)
+      {
+          printf("\n\t Pila llena\n");
+      }
+      else
+      {
+          (*frente)++;
+          pila[*frente] = numero;
+      }
+  }
+
+  int sacar(int pila[N], int* frente, int* final)
+  {
+      int num = -1;
+
+      if (*frente< *final)
+      {
+          return -9999;
+      }
+      else
+      {
+          num = pila[*frente];
+          (*frente)--;
+      }
+
+      return num;
+  }
+#+end_src

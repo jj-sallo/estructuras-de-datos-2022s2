@@ -1,0 +1,104 @@
+#+LANGUAGE: es
+#+TITLE: Clase del jueves 1 de Septiembre del 2022
+
+* Pilas
+** Representación dinámica
+*** Listas
+Datos: A, B, C.
+
+Insertar frente:
+a)
+lista -> [a | NULL]
+b)
+lista -> [b | &] -> [a | NULL]
+c)
+lista -> [c | &] -> [b | &] -> [a | NULL]
+
+Insertar final:
+a)
+lista-> [a | NULL]
+b)
+lista -> [a | &] -> [b | NULL]
+c)
+lista -> [a | &] -> [b | &] -> [c | NULL]
+
+Como las pilas usan la forma LIFO, insertar al medio está inmediatamente descartado.
+
+*** Pilas
+
+#+begin_src c
+  void apilar(NODOSIG *pila, char valor)
+  {
+      NODOSIG nuevo;
+      nuevo = new NODO;
+      if (nuevo != NULL)
+      {
+          nuevo->dato = valor;
+          nuevo->siguiente = NULL;
+          nuevo->siguiente = *pila;
+          ,*pila = nuevo;
+      }
+  }
+
+  char borrar(NODOSIG *pila)
+  {
+      NODOSIG temporal, previo;
+      previo = (*pila)->siguiente;
+      if (previo != NULL)
+      {
+          temporal = (*pila);
+          ,*pila = *pila->siguiente;
+          free(temporal);
+          return a;
+      }
+      return '\0';
+  }
+#+end_src
+
+/investigar, ejemplo del palíndromo/
+
+* Notación infija y notación postfija
+** Evaluación de xpresiones aritméticas mediante pilas
+Una expresión aritmética está formado por operandos y operadores. Así la expresión x*y-(a+b) consta de operadores *, -, +m y de los operadores x, y, a, b.
+
+Los operandos pueden ser valores constantes, variables o inck¿luso otra expresipon, Los operadroes son los símbolos conocidos de las operaciones matemáticas.
+
+5*2 - (3+4) = 5 * 2 - 7 = 10 - 7 = 3
+
+La forma habital de escribir expresiones matemáticas es aquella en la que el operador esta entre dos operandos. La expresión anterior escrita de esa forma recibe el nombre de notación infija.
+
+Para nuestro problema una expresión aritmética será un medio que permite tindicar el orden en que se debe realizar una serie de operaciones para obtener un resultado.
+
+Todas estas operaciones son binarias (requieren de dos argumentos).
+
+Notación infija: La notación habitual. El orden es primer operando, operador, segundo operando.
+
+Notación prefija: El orden es operador, primer operando, segundo operando.
+
+Notación postfija: El orden es primer operando, segundo operando, operador.
+
+Notación funcional: Se escribe el operador/función y después, entre paréntesis, los operadores separados por comas.
+
+La notación infija tine el problema de que expresiones con más de un operador existe ambigüedad sobre cual es elorden de evaluación. Ej. 8/4/2 se puede interpretar como (8/4)/2 o como 8/(4/2). Las otras notaciones no sufren de este problema.
+
+Es posible convertir una expresion en notación infija a notación postfija.
+
+A+B -> infija
+AB+ -> postfija
+
+La notación postija también se conoce como notación polaca.
+Con notación postfija no es necesario usar parentesis, ya que el orden queda establecido por la ubicacion de los operandos.
+
+Solamente se manejan los siguientes operadores.
+
+En una pila:
+| operador    | prioridad dentro | prioridad fuera |
+|-------------+------------------+-----------------|
+| ^(potencia) |                3 |               3 |
+| *, /        |                2 |               2 |
+| +, -        |                1 |               1 |
+| (           |                0 |               4 |
+
+Si tienen igual prioridad, se evaluan de izquierda a derecha.
+
+Las subexpresiones parentizadas tendrán más prioridad que cualquier operador.
