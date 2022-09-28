@@ -1,0 +1,35 @@
+#+LANGUAGE: es
+#+TITLE: Clase del lunes 12 de septiembre del 2022
+
+* Colas
+Una cola es una estructura de datos que almacena elementos en una lista y permite acceder a los datos por uno de los dos extremos, sigue la estructura primero en entrar, primero en salir (FIFO, por sus siglas en inglés).
+
+Las operaciones que están permitidas en una cola son:
+#+begin_comment
+TODO: Conseguir información de esto
+#+end_comment
+
+** Lineas de espera
+Se pueden presentar dos casos:
+1. Varias líneas de servicio, varios servidores en paralelo
+
+#+begin_example
+   [Servidor 1]  [Servidor 2]  [Servidor 3]
+
+       |😃|          |😃|          |😃|
+       |😃|          |😃|          |😃|
+       |😃|          |😃|          |😃|
+#+end_example
+
+2. Una sola línea de servicio, varios servidores.
+#+begin_example
+   [Servidor 1]  [Servidor 2]  [Servidor 3]
+            /\        /\       /\
+             \\       ||       //
+              \\      ||      //
+               \\     ||     //
+                     |😃|
+                     |😃|
+                     |😃|
+                     |😃|
+#+end_example

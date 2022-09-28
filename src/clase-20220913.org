@@ -1,0 +1,34 @@
+#+LANGUAGE: es
+#+TITLE: Clase del martes 9 de septiembre del 2022
+
+* Colas
+** Cola estática
+
+#+begin_src c
+  #include <stdio.h>
+  #define N 5
+
+  void insertar(int cola[N], int* frente, int numero)
+  {
+      if (*frente >= n-1)
+          printf("\nCola llena");
+      else
+      {
+          (*frente)++;
+          cola[*frente] = numero;
+      }
+  }
+
+  int sacar(int cola[N], int *frente, int *final)
+  {
+      int numero = -1;
+      if (*frente == *final)
+          printf("\nCola vacía");
+      else
+      {
+          numero = cola[*frente];
+          (*frente)--;
+      }
+      return numero;
+  }
+#+end_src

@@ -1,0 +1,51 @@
+#+LANGUAGE: es
+#+TITLE: Clase del martes 27 de septiembre del 2022
+
+* Recursividad vs iteración
+** Recursividad
+Tendiendo claro el concepto de recursividad, tenemos que con este recurso el paso después del primero paso es exactamente lo mismo que que paso anterior, haciendo que los pasos sean más sencillos en dirección de arriba abajo.
+
+** Iteración
+Las sentancias de iteación en programación permiten repetir una sentencia o conjunto de ellas la cantidad de n veces. Es lo que se denomina ejecutar un bucle.
+
+Aquí los pasos se realizan uno cada vez para ir con el siguiente paso.
+
+** Ventajas y desventajas de recursividad
+
+Ventajas:
+- Las soluciones se vuelven más simple y clara.
+- Le da fiabilidad a la solución ya que es fácil de entender y comprobar.
+- Da soluciones simples a problemas complejos.
+- Da pie a posibles optimizaciones en el programa.
+
+Desventajas:
+- Utiliza más tiempo y memoria para realizar la tarea.
+- Si el procedimiento es muy largo puede producir desbordamiento ya que se satura la memoria.
+
+** Aplicaciones de recursividad
+(Continua en la presentación)
+
+Algoritmos de divide y venceras.
+Separa un problema en subproblemas que se parecen al problema original, de manera recursiva resuelve los subproblemas y, por último, combina las soluciones de los subproblemas para resolver el problema original.
+
+Ejemplos:
+- Busqueda binaria
+- Encontrar el elemento máximo de un array
+- Merge-sort
+- Quick-sort
+
+Los algoritmos de divide y venceran tienen tres partes:
+Divide el problema en un número de subproblemas que son instancias más pequeñas del mismo problema.
+Vence los subproblemas al resolverlos de manera recursiva. SI son lo suficientemente pequeños, resuelve los subproblemas como casos base.
+Combina las soluciones de los subproblemas en la solucion original.
+
+Como divide y vencerás crea por lo menos dos subproblemas, un algoritmo de divide y venceras hace muchas llamadas recursivas.
+
+** Backtracking
+Es una técnica parahacer una búsqueda sistemática.
+(Continua en la presentación)
+
+** Rec
+Se recomienda usar la recursidad en caso de que el problema no tenga una solución iterativa simple, teniendo siempre en cuenta el caso base (que exista).
+
+No se recomienda usar cuando el caso general se aleja del caso base, esto provoca que resuelva el mismo problema varias veces.

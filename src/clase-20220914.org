@@ -1,0 +1,33 @@
+#+LANGUAGE: es
+#+TITLE: Clase del miércoles 14 de septiembre del 2022
+
+* Recursividad
+Tipos de errores:
+- Sintáxis
+- Lógica
+-
+
+Modularidad
+Abstracción
+Encapsulamiento
+
+** ¿Qué es un tipo dde dato abstracto (TDA)?
+Es un modelo que define valores y las operaciones que se pueden realizar sobre ellos. La intención es que quien lo itiliza no necesita saber la representación interna o la implementación de las operaciones.
+
+** ¿Qué es la abstracción?
+Se trata de sepraar los probelmas para que el programa se ocupe de sólo esta parte del problema y así si luego alguna de ellas cambia, las demás partes no se ven afectadas (o el impacto no es tan grande). En pocas palabras, mostrar sólo la información esencial y ocultar los detalles.
+
+** Encapsulamiento
+El encapsulamiento implica ocultar y proteger detalles del código.
+
+** Modulo de colecciones
+Provee un cojunto de TDA's para manipular conjuntar y estructuras de dtaos.
+
+** Módulo de interfaz de usuario
+Separar la lógica del dominio de aquella que modela la interfaz de usuario (se conoce como módulo ocomponente de la aplicación)
+
+** Memóra estática
+La velocidad de acceso es alta y la implementación es simple. Ejemplo: las variables definidas en la sección principal del programa, que sólo puedes cambiar su contenido y no su tamaño. La asignación se realiza antes de la ejecución del programa. También todas las variables declaras como estáticas (*static*).
+
+** Memória dinámica.
+Permite solicitar memoria al sistema operativo de forma precisa según los requerimientos del programa. Esta se solicita durante la ejecución del programa. Esto permite, por ejemplo, trabajar con arreglos dinámicos. Se solicita memoria con malloc y se libera con free. *calloc* reserva memoria y la inicializa en 0, se usa para arreglos y vectores y te reserva memoria de forma contigua.
