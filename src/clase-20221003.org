@@ -1,0 +1,76 @@
+#+LANGUAGE: es
+#+TITLE: Clase del lunes 3 de octubre del 2022
+
+* Estructuras de datos no lineales
+- Arboles
+- Grafos
+
+** Arboles Parte 1
+Los arboles son estructuras de datos no lineales que tiene semejazna a una jerarquización de arbil. Consta de un conjnto finito de elemento de elementos denominadno nodos y un conjunto finito de líneas firigidas, denominadas ramas, que conectan a los nodos.
+
+Posee un nodo raíz de donde se desprenderán los demás nodos y nodos rapas que se desprenden de un nodo raíz o un nodo rama y los nodos hojas que son los últimos nodos y que no desprenderán más ramas.
+
+#+begin_export ascii
+              [ Raiz ]
+              /       \
+          [ Rama ]   [ Rama ]
+         /      \           \
+     [Hojas]   [Hojas]   [Hojas]
+#+end_export
+
+** Arboles generales
+Es una estructura jerarquica aplicada sobre una coleccioń de elementos y objetos llamados nodos; uno de los cuales es conocido como raíz.
+
+Se define un arbol de tipo T como una estructura homogénea que es la contatenación de un elemento de tipo T junto con un número finito de arboles disjuntos llamados subárboles. Una forma particular de arbol puede ser la estrucrura vacía.
+
+Los arboles tiene una gran variedad de aplicaciones. Se pueden tuilizar para representar formulas matenmáticas para organizar adecuadamente la información, para construir un arbol genealógico, etc.
+
+** Propiedades de los arboles:
+
+- Longitud de camino: La longitud de camino es es numero deramas qeu teiens que pasar para llegar de un ndooa  otro nodo, casi siemre se sinicia desde la raíz.
+- Altura: Es lo mismo que la longitud, solo que se niicia desde las hojas hacia arriba.
+- Profundidad: Depende de los niveles de los nodos y los niveles se calcula contando lso nodos que hay desde la raíz ahsta el nodo al que queremos saber su profundidad.
+- Orden: La cantidad máxima de ramas que se conectan a un nodo.
+
+** Terminología
+- Nodo: tambien llamado vértice o elemento del árbol. Es el contenedor de los datos y os enlace a sus hijos y a su padre.
+- Nodo raíz: Es es nodod donde comienza el árbol. Cada arbol tiene solamente un nodo raíz, desde donde cuelgan todos los - - descendientes.
+- Nodos padre:
+- Nodos hijo:
+- Nodos hermanos:
+- Nodo hoja:
+- Nodo rama:
+- Camino:
+- Rama: Es un camino que termina en una hoja.
+- Ancestros del Nodo:
+- Nivel (profundidad): Nos referimos como nivel a cada generación dentro del árbol. Cada generación tiene un número de Nivel distinto que las demás generaciones.
+  + El nivel de la raíz es 1, sin embargo para algunos autores el nivel de la raíz es 0.
+  + El nivel de cada nodo se calcula contando
+- Altura: El número de niveles
+- Peso del árbol: Es el número de nodos que tiene un arbol.
+- Grado del árbol: Es el número mayor de hijos que tiene alguno de los nodos del árbol.
+- Grado de un nodo: Es determinado por el número de descendientes directors del mismo.
+- Orden del árbol. Limita al grado del árbol, ya que este indica el número máximo de hijos que puede tener un nodo.
+- Sub-arboles: Es todo árbol generado a partir de una sección determinada del árbol, por lo que podemos decir que un arbol es un nodo Raíz con N sub-arboles.
+- Longitud del camino: Es la suma de las longitudes del camino de todos los nodos del árbol. Se calcula por medio de la formula:
+  LCI = SUM(i = 1, h, ni*i)
+  #+begin_export ascii
+     h
+    ___
+    \
+    /   ni * i
+    ---
+    i = 1
+  #+end_export
+- Longitud del camino externo:
+  + Nodos especiales. Reemplazan las ramas vacías o nulas, no pueden tener descendientes y normalmente se respresentan con la forma de un cuadrado.
+  + Arbol extendido: Aquel en el que el número de hijos de cada nodo es igual al grado del áebol. Si alguno de los nodos de larbol no cumple con esta condición entonces debe incorporarsele al mismo nodos epsciales; tantos cmomo sea necesario para satisfacer la condición.
+  + Se calcula por medio de la siguiente formula: LCE = SUM(i=2, h+1, h_ei*i)
+    #+begin_export ascii
+    h+1
+    ___
+    \
+    /   n_ei*i
+    ---
+    i=2
+    #+end_export
