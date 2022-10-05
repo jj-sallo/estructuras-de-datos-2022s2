@@ -1,0 +1,46 @@
+#+LANGUAGE: es
+#+TITLE: CLase del martes 4 de octubre del 2022
+
+* Arboles
+** Representaciones
+1. Diagramas de Venn
+2. Notación de paréntesis
+3. Notación decimal de Dewey
+4. Notación indentada
+5. Nodal
+
+** Diagrama de Venn-Euler
+Es otra forma de ver un árbol, se puede ver repreentado com si estuvieran anidados, se puede observar como la raíz (a) se representa como la parte del todo y de forma anidada esta la rama izquierda (b) y la rama derecha (c), estas a su vez podróan tener de forma anidada más ramas.
+
+#+begin_export ascii
+ /  _______     __  \
+ | /B      \   /C \ |
+ | |[D] [E]|   \__/ |
+ | \[F]    /        |
+ \  ¯¯¯¯¯¯¯       A /
+#+end_export
+
+Ejemplo:
+
+** Paréntesis
+
+Ejemplo: A(B(D(I), E, F(J, K)), C(G, H(L)))
+
+** Decimal de Dewey
+
+Ejemplo: 1.A, 1.1.B, 1.1.1.D, 1.1.1.1.I, 1.1.2.E, 1.1.3.F, 1.1.3.1.J, 1.1.3.2.K, 1.2.C, 1.2.1.G, 1.2.2.H, 1.2.2.1.L
+
+** Notación indentada
+Ejemplo:
+- A
+  + B
+    * D
+      - I
+    * E
+    * F
+      - J
+      - K
+  + C
+    * G
+    * H
+      - L

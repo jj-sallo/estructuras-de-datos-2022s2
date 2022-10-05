@@ -53,7 +53,7 @@ Los arboles tiene una gran variedad de aplicaciones. Se pueden tuilizar para rep
 - Orden del árbol. Limita al grado del árbol, ya que este indica el número máximo de hijos que puede tener un nodo.
 - Sub-arboles: Es todo árbol generado a partir de una sección determinada del árbol, por lo que podemos decir que un arbol es un nodo Raíz con N sub-arboles.
 - Longitud del camino: Es la suma de las longitudes del camino de todos los nodos del árbol. Se calcula por medio de la formula:
-  LCI = SUM(i = 1, h, ni*i)
+  LCI = SUM(i = 1, h, ni*i). La media se obtiene dividiendo la LCI entre el numero de nodos.
   #+begin_export ascii
      h
     ___
